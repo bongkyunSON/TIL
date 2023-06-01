@@ -2,7 +2,7 @@
 
 ## Review
 
-- https://velog.io/@2712qwer/Paper-Code-Review-2009-IEEE-Matrix-Factorization-Techniques-for-Recommender-Systems
+https://datapractice0815.tistory.com/275
 
 ## Reference
 
