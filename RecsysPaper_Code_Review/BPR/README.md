@@ -1,10 +1,11 @@
-# (2009, IEEE) Matrix Factorization Techniques for Recommender Systems
+# (2009, UAI) BPR: Bayesian Personalized Ranking from Implicit Feedback
 
 ## Review
 
-https://datapractice0815.tistory.com/275
+- https://datapractice0815.tistory.com/275
 
 ## Reference
 
-- https://d2l.ai/chapter_recommender-systems/mf.html
-- [https://datajobs.com/data-science-repo/Recommender-Systems-[Netflix].pdf](https://datajobs.com/data-science-repo/Recommender-Systems-[Netflix].pdf)
+- https://d2l.ai/chapter_recommender-systems/ranking.html
+- https://arxiv.org/ftp/arxiv/papers/1205/1205.2618.pdf
+- https://medium.com/@nikhilbd/pointwise-vs-pairwise-vs-listwise-learning-to-rank-80a8fe8fadfd
