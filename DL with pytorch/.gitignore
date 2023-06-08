@@ -412,3 +412,4 @@ $RECYCLE.BIN/
 files/*
 data/*
 .vscode/*
+dataset/*
