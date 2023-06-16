@@ -1,0 +1,14 @@
+윈도우 사용할 경우 반드시 윈도우용으로 명령어를 변환하여 사용하기
+
+wc -l ./review.sorted.uniq.refined.tok. *
+
+gshuf ./review.sorted.uniq.refined.tok.tsv > review.sorted.uniq.refined.tok.shuf.tsv
+
+wc -l ./review.sorted.uniq.refined.tok. *
+
+head -n 2 ./review.sorted.uniq.refined.tok.shuf.tsv
+
+head -n 62943 ./review.sorted.uniq.refined.tok.shuf.tsv > review.sorted.uniq.refined.tok.shuf.train.tsv
+
+tail-n 10000 ./review.sorted.uniq.refined.tok.shuf.tsv > review.sorted.uniq.refined.tok.shuf.test.tsv
+

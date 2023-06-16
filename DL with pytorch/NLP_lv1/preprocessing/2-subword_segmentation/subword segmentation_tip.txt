@@ -1,0 +1,39 @@
+clone.sh에 있는 git주소를
+git clone 하기
+
+cut -f2 review.sorted.uniq.refined.tsv > review.sorted.uniq.refined.tsv.text
+
+head -n2 ./review.sorted.uniq.refined.tsv.text
+
+cat ./review.sorted.uniq.refined.tsv.text | mecab -O wakati | head -n 2
+
+cat ./review.sorted.uniq.refined.tsv.text | mecab -O wakati | python post_tokenize.py ./review.sorted.uniq.refined.tsv.text > review.sorted.uniq.refined.tsv.text.tok
+
+head -n2 ./review.sorted.uniq.refined.tsv.text.tok
+
+python ./subword-nmt/learn_bpe.py -h
+
+python ./subword-nmt/learn_bpe.py --input ./review.sorted.uniq.refined.tsv.text.tok --output ./model --symbols 30000
+
+만들어진 모델은 나중에 preprocessing 하는 과정에서 꼭 필요하기 때문에 뉴럴네트워크 웨이트 파리미터와 함께 같이 줘야한다
+
+python ./subword-nmt/learn_bpe.py --codes ./model <review.sorted.uniq.refined.tsv.text.tok> review.sorted.uniq.refined.tsv.text.tok.bpe
+
+언더스코어 2개있는것은 원래 띄어쓰기가 있었던것 언더스코어 1개는 mecab에서 띄어쓰기 한거
+
+bpe 파일에 들어가서 확인해보기
+vscode 들어가서 단어찾기
+\s[^_\s]{3,}
+
+다시 붙여주기
+cut -f1 ./review.sorted.uniq.refined.tsv > review.sorted.uniq.refined.tsv.label
+
+paste ./review.sorted.uniq.refined.tsv.label ./review.sorted.uniq.refined.tsv.text.tok.bpe > review.sorted.uniq.refined.tsv.text.tok.bpe.tsv
+
+
+한방에 하는법
+tokenize.sh ./review.sorted.uniq.refined.tsv review.sorted.uniq.refined.tsv.text.tok.bpe.tsv
+
+
+tip
+mecab으로 구어체를 잘 띄어쓰기 못해도 같은 방법으로 띄어쓰기만 잘되어있으면 상관없다

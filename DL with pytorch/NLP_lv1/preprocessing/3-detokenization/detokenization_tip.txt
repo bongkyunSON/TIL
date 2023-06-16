@@ -1,0 +1,5 @@
+텍스트 클래시피케이션 에서는 디토크나이제이션이 굳이 필요없다
+
+내츄럴 랭기지 제너럴레이션 같이 문장을 생성하는거에서는 필요하다
+
+python ./detokenizer.py < ./review.sorted.uniq.refined.tok.bpe.tsv > review.sorted.uniq.refined.tok.bpe.tsv.detok.tsv
